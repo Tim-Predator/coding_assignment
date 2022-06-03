@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 5001:5001
+    volumes:
+      - ./:/code
+    environment:
+      NODE_ENV: 'production'
+      MONGODB_PORT: '27017'
+      MONGODB_IP: 'Manulife:ManulifeMOVE@mongo'
+      MONGODB_NAME: 'ManulifeMOVE'
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    container_name: mongodb_container
+    restart: always
+    ports:
+      - 27777:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'Manulife'
+      MONGO_INITDB_ROOT_PASSWORD: 'ManulifeMOVE'
+    volumes:
+     - './data:/data/db'
+    
+
+  mongo-express:
+    image: mongo-express:0.54
+    restart: always
+    ports:
+      - 8888:8081
+    environment:
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true'
+      ME_CONFIG_MONGODB_ADMINUSERNAME: 'Manulife'
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 'ManulifeMOVE'
+      ME_CONFIG_BASICAUTH_USERNAME: "Manulife" 
+      ME_CONFIG_BASICAUTH_PASSWORD: "ManulifeMOVE" 

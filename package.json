@@ -1,0 +1,39 @@
+{
+  "name": "manulifemove_codeassignment",
+  "version": "1.0.0",
+  "description": "Code assignment for manulife move interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "start": "node ./src/server.js",
+    "generate-test-data": "node ./src/api/helpers/generate_large_test_data.js",
+    "test-large-file": "npm test -- test_upload_large_file.test.js"
+  },
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  },
+  "author": "Timothy TSE",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^3.0.1",
+    "jest": "^28.1.0",
+    "supertest": "^6.2.3"
+  },
+  "dependencies": {
+    "@joi/date": "^2.1.0",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "connect-busboy": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "http-status": "^1.5.2",
+    "joi": "^17.6.0",
+    "joi-objectid": "^4.0.2",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.6.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
