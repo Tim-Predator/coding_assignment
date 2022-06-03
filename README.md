@@ -115,7 +115,7 @@ There are only two apis in this service.
 - If no query type is specified, this api will return all records
 - If not specified, the default number of records per api call is 1000 and skipping 0 records. 
 - You may set the limit and number of skip with quert string of "limit" and "skip". An example will be **GET /sales/report?limit=2000&skip=2000**
-- Query can be **single** or **range**
+- Query type can be **single** or **range**
 - All date must be in yyyy-mm-dd format, otherwise server will return error messgae
 - To query records of specific date an example url will be **GET /sales/report?type=single&date=2020-01-01**
 - To query records of specific date range an example url will be **GET /sales/report?type=range&from=2019-11-05&to=2019-12-05**
