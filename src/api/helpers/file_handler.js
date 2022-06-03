@@ -7,6 +7,12 @@ const sales = require('../models/sales')
 
 const uploadPath ='./temp/'
 
+if (!fs.existsSync(uploadPath)){
+    fs.mkdirSync(uploadPath);
+}
+
+
+
 /*This middleware does the following thing
 1. Check if the request contains a file with the specified key
 2. Check the file type 
