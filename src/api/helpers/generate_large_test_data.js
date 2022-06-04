@@ -5,9 +5,9 @@ const fs = require('fs');
 //generate a file with size > 1GB for testing
 const generate=async (path)=>{
     try{
-        await fs.unlinkSync(path);
+        await fs.unlinkSync(path)
     }catch(e){
-        console.log(e)
+        //console.log(e)
     }
 
     await appendFile(path, 'USER_NAME,AGE,HEIGHT,GENDER,SALE_AMOUNT,LAST_PURCHASE_DATE', 'utf8')

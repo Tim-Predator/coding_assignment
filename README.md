@@ -131,9 +131,9 @@ All error response will follow the below format
     "message": "Not found/ Invalid URL"
 }
 ```
-- **status** specify the response status code
-- **errno** specify the type of the error
-- **success** specify whether the api is success or not
-- **message** specify the details of the error
+- "**status**" specify the response status code
+- "**errno**" specify the type of the error
+- "**success**" specify whether the api is success or not
+- "**message**" specify the details of the error
 
 

@@ -150,7 +150,7 @@ exports.insert_salecsv_file=async (filepath)=>{
                 insert_array.push(json)
             }
 
-            if(count%100000===0){
+            if(count%10000===0){
                 let result=await sales.insertMany(insert_array)
                 total_inserted+=result.insertedCount
                 insert_array=[]

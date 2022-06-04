@@ -303,6 +303,23 @@ describe("Test of upload csv files", () => {
         });
     });
 
+    test('Uploads a valid file with 18480 records via POST /sales/record',(done) => {
+        request(app)
+        .post('/sales/record')
+        .attach('file', './samples/sample_9.csv')
+        .expect(200)
+        .expect((res) => {
+            expect(res.body.status).toEqual(200)
+            expect(res.body.errno).toEqual(0)
+            expect(res.body.success).toEqual(true)
+            expect(res.body.message).toEqual('Inserted 18480 records')
+        }).end(async(err, res) => {
+            await connection.collection('sales').deleteMany({ USER_NAME:{$in:['TESTING NAME 1']}})
+            if (err) return done(err);
+            return done();
+        });
+    });
+
     test('Uploads a invalid file via POST /sales/record',(done) => {
         request(app)
         .post('/sales/record')

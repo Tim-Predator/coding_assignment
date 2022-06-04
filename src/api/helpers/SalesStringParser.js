@@ -5,7 +5,6 @@ class SalesStringParser{
             throw new Error('Invalid parameter for SalesStringParser. Input must be a string.')
         let arr=str.split(',')
         if(arr.length!==6){
-            console.log(arr.length)
             throw new Error('Invalid string input for SalesStringParser. ')
         }
         let json = {
